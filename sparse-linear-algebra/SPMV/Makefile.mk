@@ -13,7 +13,7 @@ csr_SOURCES = sparse-linear-algebra/SPMV/src/csr.c sparse-linear-algebra/SPMV/sr
 createcsr_SOURCES = sparse-linear-algebra/SPMV/src-test/createcsr.c sparse-linear-algebra/SPMV/src-common/sparse_formats.c sparse-linear-algebra/SPMV/src-common/ziggurat.c sparse-linear-algebra/SPMV/src-common/common.c
 
 ##createcsr does not need to be linked with any of the opencl common files
-createcsr_LDADD = include/common_args.o include/rdtsc.o opts/opts.o
+createcsr_LDADD = include/common_args.o include/rdtsc.o opts/opts.o -lm
 createcsr_LINK = $(CCLD) -lm -o $@
 
 all_local += csr-all-local
